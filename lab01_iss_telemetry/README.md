@@ -136,7 +136,7 @@ The script is designed to visualize trends in the collected ISS telemetry data.
 Example usage:
 
 ```bash
-python iss_telemetry_visualisation.py datasets/iss_telemetry/iss_telemetry_20260307_102300.csv
+python iss_telemetry_visualisation.py iss_telemetry_demo.csv --x longitude --y latitude --type scatter --hue visibility
 ```
 
 Typical workflow:
@@ -172,7 +172,7 @@ CTRL + C
 ### Step 3 – Generate graphs
 
 ```bash
-python iss_telemetry_visualisation.py datasets/iss_telemetry/iss_telemetry_20260307_102300.csv
+python iss_telemetry_visualisation.py iss_telemetry_demo.csv --x longitude --y latitude --type scatter --hue visibility
 ```
 
 The script will read the dataset and generate visualizations.
@@ -184,9 +184,10 @@ The script will read the dataset and generate visualizations.
 Example CSV structure:
 
 ```
-name,id,latitude,longitude,altitude,velocity,visibility,footprint,timestamp
-iss,25544,47.123,12.456,423.8,27600,daylight,4500,2026-03-07 10:22:10
-iss,25544,47.145,12.502,423.7,27601,daylight,4500,2026-03-07 10:22:12
+name,id,latitude,longitude,altitude,velocity,visibility,footprint,timestamp,daynum,solar_lat,solar_lon,units
+iss,25544,13.619688811789,175.03597451793,415.63397567494,27602.034795118,daylight,4485.1840525429,2026-03-06 18:25:05,2461106.267419,-5.4484201164303,266.52096109842,kilometers
+iss,25544,13.018337366248,175.49403890074,415.62313129749,27601.856575745,daylight,4485.1285469465,2026-03-06 18:25:17,2461106.2675579,-5.4483661627738,266.47095287694,kilometers
+iss,25544,11.862970851699,176.36526110302,415.61569118983,27601.486114353,daylight,4485.090465198,2026-03-06 18:25:40,2461106.2678241,-5.4482627516812,266.37510392539,kilometers
 ```
 
 Each row represents a **single telemetry snapshot**.
