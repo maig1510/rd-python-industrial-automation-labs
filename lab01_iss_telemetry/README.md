@@ -3,7 +3,7 @@
 This project contains two Python scripts for collecting and visualizing telemetry data of the **International Space Station (ISS)**.
 
 1. **iss_telemetry_logger.py** – collects ISS telemetry data from a public API and stores it in a CSV dataset.
-2. **iss_telemetry_visualisation.py** – loads the collected dataset and generates visualizations using Python data-analysis libraries.
+2. **seaborn_cli.py** – loads the collected dataset and generates visualizations using Python data-analysis libraries.
 
 Together, these scripts allow you to **record real ISS telemetry data and analyze it visually.**
 
