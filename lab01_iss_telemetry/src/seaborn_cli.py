@@ -107,9 +107,7 @@ def main():
 
     args = parse_arguments()
 
-    script_dir = Path(__file__).resolve().parent
-    path = script_dir / ".." / ".." / "datasets" / "iss_telemetry" / args.file
-    path = path.resolve()
+    path = Path(args.file).resolve()
 
     df = validate_file(path)
 

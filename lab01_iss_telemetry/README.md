@@ -39,8 +39,12 @@ project/
 │  └─ iss_telemetry/
 │      └─ iss_telemetry_YYYYMMDD_HHMMSS.csv
 │
-├─ iss_telemetry_logger.py
-├─ iss_telemetry_visualisation.py
+├─ lab01_iss_telemetry/
+│  └─ src/
+│      └─ iss_telemetry_logger.py
+│      └─ seaborn_cli.py
+│   ─ README.md
+│
 └─ README.md
 ```
 
@@ -125,9 +129,9 @@ CTRL + C
 
 ## Description
 
-`iss_telemetry_visualisation.py` loads the collected telemetry dataset and generates graphs using **Seaborn** and **Matplotlib**.
+`seaborn_cli.py` loads the collected telemetry dataset and generates graphs using **Seaborn** and **Matplotlib**.
 
-The script is designed to visualize trends in the collected ISS telemetry data.
+The script is designed to visualize trends of user provided data.
 
 ---
 
@@ -136,7 +140,7 @@ The script is designed to visualize trends in the collected ISS telemetry data.
 Example usage:
 
 ```bash
-python iss_telemetry_visualisation.py iss_telemetry_demo.csv --x longitude --y latitude --type scatter --hue visibility
+python iss_telemetry_visualisation.py ..\..\datasets\iss_telemetry\iss_telemetry_demo.csv --x longitude --y latitude --type scatter --hue visibility
 ```
 
 Typical workflow:
@@ -172,7 +176,7 @@ CTRL + C
 ### Step 3 – Generate graphs
 
 ```bash
-python iss_telemetry_visualisation.py iss_telemetry_demo.csv --x longitude --y latitude --type scatter --hue visibility
+python iss_telemetry_visualisation.py ..\..\datasets\iss_telemetry\iss_telemetry_demo.csv --x longitude --y latitude --type scatter --hue visibility
 ```
 
 The script will read the dataset and generate visualizations.
