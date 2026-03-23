@@ -153,31 +153,3 @@ date,id,name,absolute_magnitude_h,is_potentially_hazardous,diameter_min_m,diamet
 ```
 
 Each row represents a **single asteroid close approach event**.
-
----
-
-# Notes
-
-* The API allows a maximum of **7 days per request**
-* `DEMO_KEY` is rate-limited; use a personal API key for larger usage
-* Some asteroids may have incomplete or missing fields
-
----
-
-# Possible Improvements
-
-* Add CLI arguments for custom date ranges
-* Support multiple visualization types (histogram, KDE, boxplot)
-* Store data in a database instead of CSV
-* Add statistical analysis (correlations, distributions)
-* Build an interactive dashboard (Streamlit)
-
----
-
-# Purpose
-
-This project demonstrates a complete **data pipeline workflow**:
-
-* API data collection
-* data transformation
-* dataset versi
