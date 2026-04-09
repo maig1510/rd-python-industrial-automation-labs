@@ -1,0 +1,42 @@
+services:
+  flr-database:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: flr_db
+      MYSQL_USER: flr_user
+      MYSQL_PASSWORD: flr_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - flr-etl-network
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  flr-etl-pipeline:
+    build: .
+    environment:
+      DB_HOST: flr-database
+      DB_PORT: 3306
+      DB_NAME: flr_db
+      DB_USER: flr_user
+      DB_PASSWORD: flr_pass
+      NASA_API_KEY: ${NASA_API_KEY}
+    depends_on:
+      flr-database:
+        condition: service_healthy
+    networks:
+      - flr-etl-network
+
+networks:
+  flr-etl-network:
+    driver: bridge
+
+volumes:
+  db_data:
