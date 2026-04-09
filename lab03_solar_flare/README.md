@@ -1,5 +1,3 @@
----
-
 # Solar Flare ETL Pipeline
 
 ## Table of Contents
@@ -14,7 +12,7 @@
 - [Notes](#notes)
 - [Possible Improvements](#possible-improvements)
 
-## Overview(#overview)
+## Overview
 
 This project implements an **ETL (Extract–Transform–Load) pipeline** that collects solar flare data from NASA’s DONKI API, processes it, and stores it in a MariaDB database.
 
@@ -22,8 +20,7 @@ The pipeline runs continuously and periodically updates the dataset with new rec
 
 ---
 
-## Architecture(#architecture)
-
+## Architecture
 The project follows a ETL design:
 
 ```
@@ -50,7 +47,7 @@ app/
 
 ---
 
-## Features(#features)
+## Features
 
 - Continuous ETL execution with configurable refresh interval
 - Incremental data updates
@@ -59,7 +56,7 @@ app/
 
 ---
 
-## Running the Project(#running-the-project)
+## Running the Project
 
 ```bash
 docker-compose up --build
@@ -73,7 +70,7 @@ This will:
 
 ---
 
-## How It Works(#how-it-works)
+## How It Works
 
 - The pipeline runs in an **infinite loop**
 - After each run:
@@ -86,7 +83,7 @@ This will:
 
 ---
 
-## Data Model(#data-model)
+## Data Model
 
 Each solar flare record includes:
 
@@ -102,7 +99,7 @@ Each solar flare record includes:
 
 ---
 
-## Development Process(#development-process)
+## Development Process
 
 The project was developed incrementally, starting from data extraction and progressing toward a fully functional ETL pipeline.
 
@@ -178,14 +175,14 @@ Once all components were working correctly:
 
 ---
 
-## Notes(#notes)
+## Notes
 
 - Default NASA API key (`DEMO_KEY`) has rate limits — use your own key for production.
 - Time values are handled as timezone-aware UTC timestamps.
 
 ---
 
-## Possible Improvements(#possible-improvements)
+## Possible Improvements
 
 - Add web application (GUI) to browse data from MariaDB
 - Add option for user to download CSV (function to export CSV already done in export stage)
