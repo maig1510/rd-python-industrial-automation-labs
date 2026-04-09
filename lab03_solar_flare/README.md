@@ -1,5 +1,4 @@
 # Solar Flare ETL Pipeline
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -17,6 +16,11 @@
 This project implements an **ETL (Extract–Transform–Load) pipeline** that collects solar flare data from NASA’s DONKI API, processes it, and stores it in a MariaDB database.
 
 The pipeline runs continuously and periodically updates the dataset with new records.
+
+### Solar Flare Guide
+Flares happen when the powerful magnetic fields in and around the sun reconnect. They're usually associated with active regions, often seen as sun spots, where the magnetic fields are strongest. Flares are classified according to their strength. The smallest ones are B-class, followed by C, M and X, the largest. Similar to the Richter scale for earthquakes, each letter represents a ten-fold increase in energy output. So an X is 10 times an M and 100 times a C. Within each letter class, there is a finer scale from 1 to 9. C-class flares are too weak to noticeably affect Earth. M-class flares can cause brief radio blackouts at the poles and minor radiation storms that might endanger astronauts. Although X is the last letter, there are flares more than 10 times the power of an X1, so X-class flares can go higher than 9. The most powerful flare on record was in 2003, during the last solar maximum. It was so powerful that it overloaded the sensors measuring it. They cut-out at X17, and the flare was later estimated to be about X45. A powerful X-class flare like that can create long lasting radiation storms, which can harm satellites and even give airline passengers, flying near the poles, small radiation doses. X flares also have the potential to create global transmission problems and world-wide blackouts.
+
+**Credits:** _NASA/Goddard Space Flight Center_
 
 ---
 
