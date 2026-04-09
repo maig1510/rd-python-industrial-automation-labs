@@ -107,14 +107,14 @@ Each solar flare record includes:
 
 The project was developed incrementally, starting from data extraction and progressing toward a fully functional ETL pipeline.
 
-### 1. API Client
+### 1. Extraction
 
 The implementation began with `api_client.py`, which is responsible for retrieving data from the NASA DONKI API.
 This module builds upon scripts from previous lab exercises, (`iss_telemetry_logger.py` and `neows_logger.py`).
 
 ---
 
-### 2. Data Transformation
+### 2. Transformation
 
 Next, the transformation layer (`processor.py`) was developed.
 
@@ -129,7 +129,7 @@ CSV export functionality was added at a later stage as an auxiliary feature for 
 
 ---
 
-### 3. Database Layer
+### 3. Load
 
 After transformation, the database layer was developed:
 
@@ -164,7 +164,11 @@ The `main.py` script was developed in stages:
    - Added comments for clarity
    - Removed  `main()` functions from modules
    - Added `__init__.py` files to expose a module API
-
+     
+4. **Docker Troubleshooting**
+   - Encountered issues with MariaDB container startup in docker-compose
+   - Added a healthcheck to ensure the database service is ready before the ETL service starts
+   - Later identified that the issue's root cause was incorrect container shutdown, not the configuration itself
 ---
 
 ### 5. Finalization
