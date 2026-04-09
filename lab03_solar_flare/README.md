@@ -1,5 +1,3 @@
-Here is a clean, professional **README.md (in English)** tailored to your project:
-
 ---
 
 # Solar Flare ETL Pipeline
